@@ -3,7 +3,10 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import { Map, Marker, Popup, TileLayer } from "react-leaflet";
 import { Icon } from "leaflet";
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from './Header';
+import Sidebar from './Sidebar';
+import MapContainer from './MapContainer';
 
 export default function App() {
 
@@ -35,31 +38,46 @@ export default function App() {
   } else {
     console.log(data);
     return (
-      <Map center={state} zoom={state.zoom}>
-        <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        />
-        {data.map(item => (
-          <Marker
-            key={item.key}
-            position={[
-              item.location.lat,
-              item.location.lng
-            ]}
-          >
-            <Popup>
-              <div>
-                <p> <strong>{item.key}</strong> </p>
-                <p> confirmados: {item.confirmed} </p>
-                <p> muertes: {item.deaths} </p>
-                <p> recuperados: {item.recovered} </p>
-              </div>
-            </Popup>
-          </Marker>
-            ))
-        }
-      </Map>
+      <div className="container">
+        <Header />
+        <div className="row">
+          <div className="col-4">
+            <Sidebar />
+          </div>
+          <div className="map-container col-8">
+            <div className="map-frame">  
+              <Map center={state} zoom={state.zoom}>
+                <TileLayer
+                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                      attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                />
+                {data.map(item => (
+                  <Marker
+                        key={item.key}
+                        position={[
+                          item.location.lat,
+                          item.location.lng
+                        ]}
+                      >
+                        <Popup>
+                          <div>
+                            <p> <strong>{item.key}</strong> </p>
+                            <p> confirmados: {item.confirmed} </p>
+                            <p> muertes: {item.deaths} </p>
+                            <p> recuperados: {item.recovered} </p>
+                          </div>
+                        </Popup>
+                      </Marker>
+                    ))
+                }
+              </Map>
+            </div>
+          </div>
+        </div>
+        <div className="row">
+            <MapContainer />
+        </div>
+      </div>
     );
   }
 }
