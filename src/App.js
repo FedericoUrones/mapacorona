@@ -38,10 +38,10 @@ export default function App() {
         <div id="fix-for-navbar-fixed-top-spacing" style={{height: "42px"}}>&nbsp;</div>
         <div className="container mt-4">
           <div className="row">
-            <div className="col-4">
+            <div className="col-12 col-md-5">
               <Sidebar />
             </div>
-            <div className="map-container col-8">
+            <div className="map-container col-12 col-md-7">
               <MapContainer countriesinfo={data}/>
             </div>
           </div>
