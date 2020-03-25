@@ -30,9 +30,9 @@ export default function MapContainer (props) {
                     <Popup>
                         <div>
                         <p> <strong>{item.key}</strong> </p>
-                        <p> confirmados: {item.confirmed} </p>
-                        <p> muertes: {item.deaths} </p>
-                        <p> recuperados: {item.recovered} </p>
+                        <p className="text-success"> recuperados: {item.recovered} </p>
+                        <p className="text-secondary"> confirmados: {item.confirmed} </p>
+                        <p className="text-danger"> muertes: {item.deaths} </p>
                         </div>
                     </Popup>
                     </Marker>

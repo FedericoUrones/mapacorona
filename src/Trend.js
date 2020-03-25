@@ -14,22 +14,30 @@ export default function Trend() {
       const formattedData = []
       const firstItemTimeseries = dataArray[0].timeseries
       const keys = Object.keys(firstItemTimeseries)
+      let confirmed = 0, deaths = 0, recovered = 0;
+      const firstMarch = new Date(2020, 2, 1)
       keys.map(key => {
-        formattedData.push({
-            date: new Date(key),
-            type: 'Confirmados',
-            quantity: firstItemTimeseries[key].confirmed
-        })
-        formattedData.push({
-            date: new Date(key),
-            type: 'Muertes',
-            quantity: firstItemTimeseries[key].deaths
-        })
-        formattedData.push({
-            date: new Date(key),
-            type: 'Recuperados',
-            quantity: firstItemTimeseries[key].recovered
-        })
+        const dateItem = new Date(key)
+        if (dateItem >= firstMarch) {
+            confirmed = firstItemTimeseries[key].confirmed - confirmed
+            formattedData.push({
+                date: dateItem,
+                type: 'Confirmados',
+                quantity: confirmed
+            })
+            deaths = firstItemTimeseries[key].deaths - deaths
+            formattedData.push({
+                date: dateItem,
+                type: 'Muertes',
+                quantity: deaths
+            })
+            recovered = firstItemTimeseries[key].recovered - recovered
+            formattedData.push({
+                date: dateItem,
+                type: 'Recuperados',
+                quantity: recovered
+            })
+        }
       })
       console.log(formattedData)
       setData({items: formattedData})
@@ -53,7 +61,8 @@ export default function Trend() {
           y: { field: 'quantity', type: 'quantitative', title: 'Cantidad'},
           color: {field: 'type', type: 'nominal'}
         },
-        data: { name: 'items' }
+        data: { name: 'items' },
+        actions: false
       }
 
     if (!data) {

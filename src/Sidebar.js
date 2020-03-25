@@ -35,15 +35,15 @@ export default function Sidebar () {
         <div>
             <h4>A nivel mundial</h4>
             <ul>
-                <li><span>Muertes confirmadas: {data.brief.deaths}</span></li>
-                <li><span>Casos confirmados: {data.brief.confirmed}</span></li>
-                <li><span>Casos recuperados: {data.brief.recovered}</span></li>
+                <li>Casos recuperados: <span className="text-success">{data.brief.recovered}</span></li>
+                <li>Casos confirmados: <span className="text-secondary">{data.brief.confirmed}</span></li>
+                <li>Muertes: <span className="text-danger">{data.brief.deaths}</span></li>
             </ul>
             <h4>Argentina</h4>
             <ul>
-                <li><span>Muertes confirmadas: {data.argBrief.deaths}</span></li>
-                <li><span>Casos confirmados: {data.argBrief.confirmed}</span></li>
-                <li><span>Casos recuperados: {data.argBrief.recovered}</span></li>
+                <li>Casos recuperados: <span className="text-success">{data.argBrief.recovered}</span></li>
+                <li>Casos confirmados: <span className="text-secondary">{data.argBrief.confirmed}</span></li>
+                <li>Muertes: <span className="text-danger">{data.argBrief.deaths}</span></li>
             </ul>            
             <Trend />
         </div>
