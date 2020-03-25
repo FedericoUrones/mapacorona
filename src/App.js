@@ -10,7 +10,7 @@ export default function App() {
   const [data, setData] = useState('');
 
   const getData = async () => {
-    const response = await fetch('https://wuhan-coronavirus-api.laeyoung.endpoint.ainize.ai/jhu-edu/latest')
+    const response = await fetch('https://wuhan-coronavirus-api.laeyoung.endpoint.ainize.ai/jhu-edu/latest?onlyCountries=true')
     const data = await response.json()
     data.map((item) => {
       item.key = (item.provincestate)? item.countryregion + "-" + item.provincestate : item.countryregion;
