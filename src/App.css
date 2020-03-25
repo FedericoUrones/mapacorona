@@ -37,7 +37,13 @@
   }
 }
 
+
 /* Map CSS */
+.leaflet-container {
+  width: 100%;
+  height: 90vh;
+}
+
 .map-container {
   height: 100%;
   /* Fallback for vmin */
@@ -46,10 +52,10 @@
 }
 
 .map-frame {
-  height: 100%;
+  height: 90%;
   width: 100%;
 /*   We use outline over border as has issues in some cases */
-  outline: 1px solid black;
+  /*outline: 1px solid black;*/
 }
 
 #map-id { 

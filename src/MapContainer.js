@@ -8,8 +8,6 @@ export default function MapContainer (props) {
         lng: -63.61,
         zoom: 4,
         }
-    console.log("MapContainer")
-    console.log(props)
     if (!props) {
         return (null)
     }
