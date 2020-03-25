@@ -3,8 +3,10 @@ import React from 'react';
 export default function Header () {
 
     return (
-        <div className="header">
-          <h1 className="title">Avance Coronavirus a nivel mundial</h1>
+      <nav className="navbar fixed-top navbar-dark bg-dark">
+        <div className="container">
+          <h1 className="navbar-dark navbar-brand">Avance Coronavirus a nivel mundial</h1>
         </div>
+      </nav>
     )
 }

@@ -26,17 +26,24 @@ export default function App() {
   }, []);
 
   if (!data) {
-    return (<div>Inicializando componentes...</div>);
+    return (
+      <div className="container mt-4">
+        Inicializando componentes...
+      </div>
+      );
   } else {
     return (
-      <div className="container">
+      <div className="">
         <Header />
-        <div className="row">
-          <div className="col-4">
-            <Sidebar />
-          </div>
-          <div className="map-container col-8">
-            <MapContainer countriesinfo={data}/>
+        <div id="fix-for-navbar-fixed-top-spacing" style={{height: "42px"}}>&nbsp;</div>
+        <div className="container mt-4">
+          <div className="row">
+            <div className="col-4">
+              <Sidebar />
+            </div>
+            <div className="map-container col-8">
+              <MapContainer countriesinfo={data}/>
+            </div>
           </div>
         </div>
       </div>

@@ -17,9 +17,18 @@ export default function Trend() {
       keys.map(key => {
         formattedData.push({
             date: new Date(key),
-            confirmed: firstItemTimeseries[key].confirmed,
-            deaths: firstItemTimeseries[key].deaths,
-            recovered: firstItemTimeseries[key].recovered
+            type: 'Confirmados',
+            quantity: firstItemTimeseries[key].confirmed
+        })
+        formattedData.push({
+            date: new Date(key),
+            type: 'Muertes',
+            quantity: firstItemTimeseries[key].deaths
+        })
+        formattedData.push({
+            date: new Date(key),
+            type: 'Recuperados',
+            quantity: firstItemTimeseries[key].recovered
         })
       })
       console.log(formattedData)
@@ -33,20 +42,27 @@ export default function Trend() {
     }, []);
 
     const spec = {
-        width: 300,
-        height: 300,
-        mark: 'line',
-        encoding: {
-          x: { field: 'date', type: 'temporal' },
-          y: { field: 'confirmed', type: 'quantitative' },
+        width: 200,
+        height: 200,
+        mark: {
+            type: 'line',
+            tooltip: true
         },
-        data: { name: 'items' }, // note: vega-lite data attribute is a plain object instead of an array
+        encoding: {
+          x: { field: 'date', type: 'temporal', title: 'Fecha' },
+          y: { field: 'quantity', type: 'quantitative', title: 'Cantidad'},
+          color: {field: 'type', type: 'nominal'}
+        },
+        data: { name: 'items' }
       }
 
     if (!data) {
         return (<div>Buscando datos de Tendencia...</div>);
     }
     return (
-        <VegaLite spec={spec} data={data} />
+        <div>
+            <h4>Tendencia en Argentina</h4>
+            <VegaLite spec={spec} data={data} />
+        </div>
     )
 }

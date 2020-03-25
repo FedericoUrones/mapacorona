@@ -13,6 +13,7 @@ export default function Sidebar () {
       const dataBrief = await responseBrief.json()
       const responseAr = await fetch(argBriefUrl)
       const dataAr = await responseAr.json()      
+      console.log(dataAr)
       const response = {
           brief: dataBrief,
           argBrief: dataAr[0]
