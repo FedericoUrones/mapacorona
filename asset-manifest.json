@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/mapacorona/static/css/main.e0c702b4.chunk.css",
-    "main.js": "/mapacorona/static/js/main.55891665.chunk.js",
-    "main.js.map": "/mapacorona/static/js/main.55891665.chunk.js.map",
+    "main.js": "/mapacorona/static/js/main.a93c9695.chunk.js",
+    "main.js.map": "/mapacorona/static/js/main.a93c9695.chunk.js.map",
     "runtime-main.js": "/mapacorona/static/js/runtime-main.34cdfb89.js",
     "runtime-main.js.map": "/mapacorona/static/js/runtime-main.34cdfb89.js.map",
     "static/css/2.de424728.chunk.css": "/mapacorona/static/css/2.de424728.chunk.css",
     "static/js/2.8444d17f.chunk.js": "/mapacorona/static/js/2.8444d17f.chunk.js",
     "static/js/2.8444d17f.chunk.js.map": "/mapacorona/static/js/2.8444d17f.chunk.js.map",
     "index.html": "/mapacorona/index.html",
-    "precache-manifest.3b60bad24baad5e30426d10d622a23a3.js": "/mapacorona/precache-manifest.3b60bad24baad5e30426d10d622a23a3.js",
+    "precache-manifest.9dd0fa5960cdc3cbb33db96acdeb3a29.js": "/mapacorona/precache-manifest.9dd0fa5960cdc3cbb33db96acdeb3a29.js",
     "service-worker.js": "/mapacorona/service-worker.js",
     "static/css/2.de424728.chunk.css.map": "/mapacorona/static/css/2.de424728.chunk.css.map",
     "static/css/main.e0c702b4.chunk.css.map": "/mapacorona/static/css/main.e0c702b4.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.de424728.chunk.css",
     "static/js/2.8444d17f.chunk.js",
     "static/css/main.e0c702b4.chunk.css",
-    "static/js/main.55891665.chunk.js"
+    "static/js/main.a93c9695.chunk.js"
   ]
 }
