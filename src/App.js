@@ -45,37 +45,8 @@ export default function App() {
             <Sidebar />
           </div>
           <div className="map-container col-8">
-            <div className="map-frame">  
-              <Map center={state} zoom={state.zoom}>
-                <TileLayer
-                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                      attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                />
-                {data.map(item => (
-                  <Marker
-                        key={item.key}
-                        position={[
-                          item.location.lat,
-                          item.location.lng
-                        ]}
-                      >
-                        <Popup>
-                          <div>
-                            <p> <strong>{item.key}</strong> </p>
-                            <p> confirmados: {item.confirmed} </p>
-                            <p> muertes: {item.deaths} </p>
-                            <p> recuperados: {item.recovered} </p>
-                          </div>
-                        </Popup>
-                      </Marker>
-                    ))
-                }
-              </Map>
-            </div>
+            <MapContainer countriesinfo={data}/>
           </div>
-        </div>
-        <div className="row">
-            <MapContainer />
         </div>
       </div>
     );
